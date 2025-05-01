@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Johntech Solutions</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            color: #2d3748;
+            background-color: #f8fafc;
+        }
+        
+        .header {
+            background-color: #1e3a8a;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background-color: #1e3a8a;
+        }
+        
+        .nav-logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+        
+        .nav-link {
+            color: white;
+            text-decoration: none;
+        }
+        
+        .hero {
+            background-color: #e6f0f9;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+        
+        .hero-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #1e3a8a;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: #1e3a8a;
+            text-align: center;
+        }
+        
+        .mission-container {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            align-items: center;
+        }
+        
+        .mission-content {
+            flex: 1;
+        }
+        
+        .mission-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: #1e79ba;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+        }
+        
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            right: -12px;
+            top: 15px;
+            border-radius: 50%;
+            background-color: white;
+            border: 4px solid #1e79ba;
+            z-index: 1;
+        }
+        
+        .left {
+            left: 0;
+        }
+        
+        .right {
+            left: 50%;
+        }
+        
+        .left::after {
+            right: -12px;
+        }
+        
+        .right::after {
+            left: -12px;
+        }
+        
+        .timeline-content {
+            padding: 20px;
+            background-color: white;
+            border-radius: 6px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .timeline-year {
+            font-weight: bold;
+            color: #1e79ba;
+            margin-bottom: 0.5rem;
+        }
+        
+        .team-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .team-member {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        
+        .member-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .member-info {
+            padding: 1.5rem;
+        }
+        
+        .member-name {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: #1e3a8a;
+        }
+        
+        .member-position {
+            color: #4a5568;
+            margin-bottom: 1rem;
+        }
+        
+        .values-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .value-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .value-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #1e79ba;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .footer {
+            background-color: #1e3a8a;
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .footer-link {
+            color: white;
+            text-decoration: none;
+        }
+        
+        .footer-bottom {
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: #1e79ba;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .cta-button:hover {
+            background-color: #155e92;
+        }
+        
+        @media screen and (max-width: 768px) {
+            .mission-container {
+                flex-direction: column;
+            }
+            
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-item::after {
+                left: 18px;
+            }
+            
+            .left::after, .right::after {
+                left: 18px;
+            }
+            
+            .right {
+                left: 0%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-logo">Johntech Solutions</div>
+        <div class="nav-links">
+            <a href="#" class="nav-link">Home</a>
+            <a href="#" class="nav-link">About</a>
+            <a href="#" class="nav-link">Solutions</a>
+            <a href="#" class="nav-link">Contact</a>
+        </div>
+    </nav>
+    
+    <section class="hero">
+        <h1 class="hero-title">About Johntech Solutions</h1>
+        <p class="hero-subtitle">Pioneering water purification technology since 2010, we're committed to providing businesses with innovative, sustainable, and cost-effective water solutions.</p>
+    </section>
+    
+    <section class="section">
+        <h2 class="section-title">Our Mission</h2>
+        <div class="mission-container">
+            <div class="mission-content">
+                <p>At Johntech Solutions, our mission is to revolutionize water access and quality for businesses worldwide. We believe that clean, safe water should be accessible to everyone, and our innovative water vending machines and purification systems make this possible while creating valuable revenue streams for our clients.</p>
+                <br>
+                <p>We strive to reduce plastic waste by providing alternatives to bottled water, and our advanced filtration technologies ensure that every drop dispensed meets the highest quality standards. By combining cutting-edge technology with sustainable practices, we're helping businesses across industries meet their water needs while contributing to a healthier planet.</p>
+            </div>
+            <div class="mission-image">
+                <img src="/api/placeholder/600/400" alt="Water purification technology" width="100%">
+            </div>
+        </div>
+    </section>
+    
+    <section class="section" style="background-color: #f0f9ff;">
+        <h2 class="section-title">Our History</h2>
+        <div class="timeline">
+            <div class="timeline-item left">
+                <div class="timeline-content">
+                    <div class="timeline-year">2010</div>
+                    <h3>Company Founded</h3>
+                    <p>Johntech Solutions was established by John Smith with a vision to transform water access for businesses.</p>
+                </div>
+            </div>
+            <div class="timeline-item right">
+                <div class="timeline-content">
+                    <div class="timeline-year">2013</div>
+                    <h3>First Water ATM</h3>
+                    <p>Launched our first commercial water vending machine, revolutionizing how businesses provide water.</p>
+                </div>
+            </div>
+            <div class="timeline-item left">
+                <div class="timeline-content">
+                    <div class="timeline-year">2016</div>
+                    <h3>Expansion</h3>
+                    <p>Expanded operations to three new countries and introduced advanced filtration technology.</p>
+                </div>
+            </div>
+            <div class="timeline-item right">
+                <div class="timeline-content">
+                    <div class="timeline-year">2019</div>
+                    <h3>Smart Technology Integration</h3>
+                    <p>Incorporated IoT capabilities into our systems for remote monitoring and management.</p>
+                </div>
+            </div>
+            <div class="timeline-item left">
+                <div class="timeline-content">
+                    <div class="timeline-year">2022</div>
+                    <h3>Sustainability Initiative</h3>
+                    <p>Launched eco-friendly product line using recycled materials and energy-efficient components.</p>
+                </div>
+            </div>
+            <div class="timeline-item right">
+                <div class="timeline-content">
+                    <div class="timeline-year">2024</div>
+                    <h3>Global Presence</h3>
+                    <p>Now serving businesses in over 20 countries with tailored water solutions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section">
+        <h2 class="section-title">Our Team</h2>
+        <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem;">Our diverse team of experts brings together decades of experience in water technology, engineering, business development, and customer service to deliver the best solutions for our clients.</p>
+        <div class="team-container">
+            <div class="team-member">
+                <img src="/api/placeholder/400/400" alt="Team member" class="member-image">
+                <div class="member-info">
+                    <h3 class="member-name">John Smith</h3>
+                    <p class="member-position">Founder & CEO</p>
+                    <p>With over 20 years in water technology, John's vision drives our innovation and growth.</p>
+                </div>
+            </div>
+            <div class="team-member">
+                <img src="/api/placeholder/400/400" alt="Team member" class="member-image">
+                <div class="member-info">
+                    <h3 class="member-name">Sarah Johnson</h3>
+                    <p class="member-position">Chief Technology Officer</p>
+                    <p>Sarah leads our R&D team in developing cutting-edge purification technologies.</p>
+                </div>
+            </div>
+            <div class="team-member">
+                <img src="/api/placeholder/400/400" alt="Team member" class="member-image">
+                <div class="member-info">
+                    <h3 class="member-name">Michael Chen</h3>
+                    <p class="member-position">Head of Operations</p>
+                    <p>Michael ensures our systems are efficient, reliable, and exceed customer expectations.</p>
+                </div>
+            </div>
+            <div class="team-member">
+                <img src="/api/placeholder/400/400" alt="Team member" class="member-image">
+                <div class="member-info">
+                    <h3 class="member-name">Elena Rodriguez</h3>
+                    <p class="member-position">Global Sales Director</p>
+                    <p>Elena builds relationships with clients around the world to deliver custom solutions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section" style="background-color: #f0f9ff;">
+        <h2 class="section-title">Our Values</h2>
+        <div class="values-container">
+            <div class="value-card">
+                <h3 class="value-title">Innovation</h3>
+                <p>We constantly push the boundaries of what's possible in water purification technology, investing in research and development to create solutions that meet tomorrow's challenges.</p>
+            </div>
+            <div class="value-card">
+                <h3 class="value-title">Sustainability</h3>
+                <p>Our commitment to environmental stewardship drives us to develop products that reduce plastic waste, conserve energy, and minimize the ecological footprint of water delivery.</p>
+            </div>
+            <div class="value-card">
+                <h3 class="value-title">Quality</h3>
+                <p>We never compromise on the quality of our systems or the water they produce. Every product undergoes rigorous testing to ensure it meets the highest standards of purity and reliability.</p>
+            </div>
+            <div class="value-card">
+                <h3 class="value-title">Customer Focus</h3>
+                <p>We believe in building lasting relationships with our clients through exceptional service, ongoing support, and a deep understanding of their unique water needs.</p>
+            </div>
+            <div class="value-card">
+                <h3 class="value-title">Integrity</h3>
+                <p>Honesty and transparency guide all our business practices. We stand behind our products and are accountable to our customers, employees, and the communities we serve.</p>
+            </div>
+            <div class="value-card">
+                <h3 class="value-title">Accessibility</h3>
+                <p>We're committed to making clean water solutions available to businesses of all sizes, with flexible options that create value while improving water access.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section">
+        <h2 class="section-title">Why Choose Johntech Solutions?</h2>
+        <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+            <p>For over a decade, we've been at the forefront of water purification technology, helping businesses across industries create new revenue streams while providing their customers, employees, and communities with access to clean, safe water.</p>
+            <br>
+            <p>Our water ATMs and purification systems are designed with reliability, efficiency, and sustainability in mind. From concept to installation and beyond, our team works closely with you to understand your unique needs and develop a solution that delivers results.</p>
+            <br>
+            <p>Join the hundreds of businesses that have transformed their approach to water with Johntech Solutions.</p>
+            <br>
+            <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 2rem;">
+                <a href="#" class="cta-button">Request Consultation</a>
+                <a href="#" class="cta-button" style="background-color: #4a5568;">Explore Solutions</a>
+            </div>
+        </div>
+    </section>
+    
+    <footer class="footer">
+        <div>
+            <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">Johntech Solutions</h3>
+            <p>Pure Water Solutions for Every Business</p>
+        </div>
+        <div class="footer-links">
+            <a href="#" class="footer-link">Home</a>
+            <a href="#" class="footer-link">About</a>
+            <a href="#" class="footer-link">Solutions</a>
+            <a href="#" class="footer-link">Case Studies</a>
+            <a href="#" class="footer-link">Contact</a>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Johntech Solutions. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

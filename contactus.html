@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+    <title>Contact Us - Johntech Solutions Kenya</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        :root {
+            --primary: #1a7db5;
+            --primary-dark: #0c4d72;
+            --secondary: #e67e22;
+            --light: #f0f7fa;
+            --dark: #2c3e50;
+            --text: #333;
+            --border-radius: 12px;
+            --box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        .loading-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            z-index: 9999;
+            width: 0;
+            animation: loading 1.5s ease-out forwards;
+        }
+        
+        @keyframes loading {
+            0% { width: 0; }
+            100% { width: 100%; }
+        }
+        
+        header {
+            background-color: var(--dark);
+            color: white;
+            padding: 1px;
+            text-align: center;
+            position: sticky;
+            
+  
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .page-hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .page-hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+            z-index: 1;
+        }
+        
+        .page-hero h1 {
+            font-size: 32px;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .page-hero p {
+            font-size: 18px;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 15px;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--primary);
+            font-size: 26px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 3px;
+        }
+        
+        .contact-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+        
+        .contact-form {
+            flex: 1 1 500px;
+            background: white;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            transform: translateY(20px);
+            opacity: 0;
+            animation: fadeInUp 0.6s ease-out 0.3s forwards;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--dark);
+            font-weight: 500;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: var(--transition);
+        }
+        
+        .form-control:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(26, 125, 181, 0.2);
+            outline: none;
+        }
+        
+        .btn-submit {
+            background: linear-gradient(90deg, var(--secondary), #d35400);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 4px 10px rgba(230, 126, 34, 0.3);
+            display: inline-block;
+            text-decoration: none;
+            text-align: center;
+        }
+        
+        .btn-submit:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(230, 126, 34, 0.4);
+        }
+        
+        .btn-submit:active {
+            transform: translateY(-1px);
+        }
+        
+        .contact-info {
+            flex: 1 1 300px;
+            transform: translateY(20px);
+            opacity: 0;
+            animation: fadeInUp 0.6s ease-out 0.5s forwards;
+        }
+        
+        .info-card {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+        
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .info-title {
+            color: var(--primary);
+            font-size: 18px;
+            margin-bottom: 15px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+        
+        .info-title svg {
+            margin-right: 10px;
+        }
+        
+        .info-content {
+            color: var(--text);
+        }
+        
+        .info-content p {
+            margin-bottom: 10px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: var(--light);
+            border-radius: 50%;
+            color: var(--primary);
+            transition: var(--transition);
+        }
+        
+        .social-link:hover {
+            background-color: var(--primary);
+            color: white;
+            transform: scale(1.1);
+        }
+        
+        .map-container {
+            margin-bottom: 60px;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            height: 400px;
+            position: relative;
+            transform: translateY(20px);
+            opacity: 0;
+            animation: fadeInUp 0.6s ease-out 0.7s forwards;
+        }
+        
+        .map-embed {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            border-radius: var(--border-radius);
+            padding: 40px 30px;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 60px;
+            box-shadow: 0 10px 30px rgba(26, 125, 181, 0.3);
+            transform: translateY(20px);
+            opacity: 0;
+            animation: fadeInUp 0.6s ease-out 0.9s forwards;
+        }
+        
+        .cta-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            z-index: 1;
+        }
+        
+        .cta-section h2 {
+            font-size: 26px;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .cta-section p {
+            max-width: 700px;
+            margin: 0 auto 20px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .btn-cta {
+            padding: 14px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+        
+        .btn-primary {
+            background: white;
+            color: var(--primary);
+            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.3);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(255, 255, 255, 0.4);
+        }
+        
+        .btn-secondary {
+            background: var(--secondary);
+            color: white;
+            box-shadow: 0 4px 10px rgba(230, 126, 34, 0.3);
+        }
+        
+        .btn-secondary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(230, 126, 34, 0.4);
+        }
+        
+        .faq-section {
+            margin-bottom: 60px;
+            transform: translateY(20px);
+            opacity: 0;
+            animation: fadeInUp 0.6s ease-out 1.1s forwards;
+        }
+        
+        .faq-item {
+            background: white;
+            border-radius: var(--border-radius);
+            margin-bottom: 15px;
+            box-shadow: var(--box-shadow);
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            padding: 18px 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--primary);
+            transition: var(--transition);
+        }
+        
+        .faq-question:hover {
+            background-color: rgba(26, 125, 181, 0.05);
+        }
+        
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease;
+        }
+        
+        .faq-answer.active {
+            padding: 0 20px 20px;
+            max-height: 200px;
+        }
+        
+        .faq-icon {
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-question.active .faq-icon {
+            transform: rotate(45deg);
+        }
+        
+        .water-drop {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: rgba(26, 125, 181, 0.3);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9;
+        }
+        
+        .footer {
+    background-color: #111;
+    color: #eee;
+    padding: 40px 20px 20px;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.footer-section, .footer-about, .footer-links, .footer-social {
+    flex: 1 1 200px;
+    min-width: 200px;
+}
+
+.footer h3, .footer h4 {
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.footer p, .footer ul {
+    margin: 0;
+    font-size: 14px;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links a {
+    color: #ccc;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.footer-links a:hover {
+    color: #1e90ff;
+}
+
+.social-links {
+    display: flex;
+    gap: 10px;
+}
+
+.social-link {
+    color: #ccc;
+    transition: color 0.3s ease;
+}
+
+.social-link:hover {
+    color: #1e90ff;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 13px;
+    color: #aaa;
+}
+/* Social icon container */
+.social-link svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* Specific brand colors */
+.social-link-fb svg { color: #1877f2; }    /* Facebook blue */
+.social-link-insta svg { color: #e4405f; }   /* Instagram pink-red */
+.social-link-whtpp svg { color: #25D366; }    /* WhatsApp green */
+.social-link-tiktok svg { color: #ffff; }      /* TikTok black */
+
+
+/* Responsive layout */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+        
+        @keyframes fadeInUp {
+            from { 
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .btn-whatsapp {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            z-index: 99;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            }
+            70% {
+                transform: scale(1.1);
+                box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .page-hero h1 {
+                font-size: 26px;
+            }
+            
+            .page-hero p {
+                font-size: 16px;
+            }
+            
+            .contact-wrapper {
+                flex-direction: column;
+            }
+            
+            .map-container {
+                height: 300px;
+            }
+            
+            .btn-whatsapp {
+                width: 50px;
+                height: 50px;
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="loading-bar"></div>
+    
+ <!-- Header -->
+<header class="bg-white shadow-md fixed top-0 left-0 right-0 z-50">
+    <div class="container mx-auto max-w-screen-xl px-6 py-3">
+        <nav class="flex justify-between items-center">
+      <div class="flex items-center space-x-3">
+                <!-- Enlarged logo -->
+                <img src="images/johntech-icon.png" alt="Johntech Solutions Logo" class="h-16 w-auto">
+                <!-- Two-tone company name -->
+                <div class="text-2xl font-bold">
+                    <span style="color: #261bf5;">Johntech</span> <span style="color: #f20a0a">Solutions</span>
+                </div>
+            </div>
+            <div class="hidden md:flex space-x-6">
+
+                <a href="index.html" class="header-nav-link px-2 py-1 text-gray-700 hover:text-sky-700 hover:border-b-2 hover:border-sky-700 transition duration-300">Home</a>
+                <a href="faq.html" class="header-nav-link px-2 py-1 text-gray-700 hover:text-sky-700 hover:border-b-2 hover:border-sky-700 transition duration-300">FAQ</a>
+                <a href="testimonials.html" class="header-nav-link px-2 py-1 text-gray-700 hover:text-sky-700 hover:border-b-2 hover:border-sky-700 transition duration-300">Testimonials</a>
+                <a href="products.html" class="header-nav-link px-2 py-1 text-gray-700 hover:text-sky-700 hover:border-b-2 hover:border-sky-700 transition duration-300">Products</a>
+            </div>
+            <div class="md:hidden">
+                <button id="menuToggle" class="text-sky-700 focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </nav>
+        <!-- Mobile menu -->
+        <div id="mobileMenu" class="md:hidden hidden bg-white py-4 animate_animated animate_fadeIn">
+            <a href="index.html" class="block py-2 px-4 hover:bg-sky-50">Home</a>
+            <a href="faq.html" class="block py-2 px-4 hover:bg-sky-50">FAQ</a>
+            <a href="testimonials.html" class="block py-2 px-4 hover:bg-sky-50">Testimonials</a>
+            <a href="products.html" class="block py-2 px-4 hover:bg-sky-50">Products</a>
+        </div>
+    </div>
+</header>
+    
+    <div class="page-hero">
+        <h1>Let's Connect</h1>
+        <p>We'd love to hear from you – Let's bring clean water access and business to your area.</p>
+    </div>
+    
+    <div class="container">
+        <h2 class="section-title">Get In Touch</h2>
+        
+        <div class="contact-wrapper">
+            <div class="contact-form">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" class="form-control" placeholder="Your name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" class="form-control" placeholder="e.g., 0712 345 678" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" class="form-control" placeholder="your@email.com" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="location">Your Location</label>
+                        <input type="text" id="location" class="form-control" placeholder="County, Town/Area" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" rows="5" class="form-control" placeholder="Tell us about your water needs or business interests..." required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn-submit">Send Message</button>
+                </form>
+            </div>
+            
+            <div class="contact-info">
+                <div class="info-card">
+                    <div class="info-title">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                        </svg>
+                        Call Us
+                    </div>
+                    <div class="info-content">
+                        <p>Sales & support: +254 790 825 018</p>
+
+                    </div>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-title">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                        Email Us
+                    </div>
+                    <div class="info-content">
+                        <p>info@johntechsolutions.co.ke</p>
+                        <p>support@johntechsolutions.co.ke</p>
+                    </div>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-title">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                        Visit Us
+                    </div>
+                    <div class="info-content">
+                        <p>Johntech Solutions Ltd.</p>
+                        <p>Ruiru, PlainsView Hospital building</p>
+                        <p>Kiambu, Kenya</p>
+                    </div>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-title">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                        Business Hours
+                    </div>
+                    <div class="info-content">
+                        <p>Monday - Friday: 8:00 AM - 5:00 PM</p>
+                        <p>Saturday: 9:00 AM - 1:00 PM</p>
+                        <p>Sunday: Closed</p>
+                    </div>
+                </div>
+                
+                <div class="info-card">
+                    <div class="info-title">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+                        </svg>
+                        Connect With Us
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/jontechtechnologieskenya" class="social-link-fb">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg>
+                        </a>
+                        <a href="https://www.instagram.com/john.techtechnologieskenya2023" class="social-link-insta">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </a>
+                <!-- WhatsApp -->
+                <a href="https://wa.me/254790825018" class="social-link-whtpp" aria-label="WhatsApp">
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 32 32">
+                        <path d="M16 3C9.4 3 4 8.4 4 15c0 2.7.9 5.3 2.6 7.4L4 29l7.9-2.6C14.1 27.1 15 27 16 27c6.6 0 12-5.4 12-12S22.6 3 16 3zm0 21c-.8 0-1.6-.1-2.4-.3l-.3-.1-4.7 1.6 1.6-4.5-.2-.3c-1.4-1.7-2.2-3.8-2.2-6C8 9.5 11.5 6 16 6s8 3.5 8 8-3.5 10-8 10zm4.5-7.6c-.2-.1-1.2-.6-1.3-.6s-.3-.1-.5.1-.6.6-.7.7-.3.1-.5 0c-.2-.1-.8-.3-1.4-.9-.5-.5-.9-1.2-1-1.4s0-.3.1-.4.2-.2.3-.3c.1-.1.2-.2.3-.4.1-.2 0-.3 0-.4s-.5-1.3-.7-1.7c-.2-.5-.4-.4-.6-.4h-.4c-.1 0-.4.1-.6.3-.2.2-.8.8-.8 2s.9 2.3 1 2.5c.1.2 1.8 2.7 4.5 3.7.6.3 1 .5 1.4.6.6.2 1.1.2 1.5.1.4-.1 1.2-.5 1.3-1 .1-.4.1-1 .1-1s-.1-.1-.3-.2z"/>
+                    </svg>
+                </a>
+
+                <!-- TikTok -->
+                <a href="https://www.tiktok.com/@jtechtechologies?_t=8s5QdodQxjJ&_r=1" class="social-link" aria-label="TikTok">
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 256 256">
+                        <path d="M168 24a8 8 0 0 0-8-8h-32a8 8 0 0 0-8 8v105.4a24 24 0 1 1-16-22.6 8 8 0 0 0 8-8V88a8 8 0 0 0-10.6-7.6A40 40 0 1 0 152 160V88a87.5 87.5 0 0 0 40 10.2 8 8 0 0 0 8-8V56a8 8 0 0 0-8-8h-24V32a8 8 0 0 0-8-8Z"/>
+                    </svg>
+                </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="map-container">
+    <iframe class="map-embed" src="https://www.google.com/maps/embed?pb=!1m12!1m8!1m3!1d3989.007025556855!2d36.959606!3d-1.1554676!3m2!1i1024!2i768!4f13.1!2m1!1sPlainsview%20Hospital%20Ruiru!5e0!3m2!1sen!2ske!4v1746103295455!5m2!1sen!2ske"
+        width="100%" 
+        height="300" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+</div>
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-about">
+            <h3>Johntech Solution</h3>
+            <p>Providing smart vending and water purification systems across Kenya.</p>
+        </div>
+        <div class="footer-links">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">products</a></li>
+                <li><a href="faq.html">Faq</a></li>
+                <li><a href="testimonials.html">Testimonials</a></li>
+            </ul>
+        </div>
+        <div class="footer-social">
+            <h4>Follow Us</h4>
+            <div class="social-links">
+                <!-- Facebook -->
+                <a href="https://www.facebook.com/jontechtechnologieskenya" class="social-link-fb" aria-label="Facebook">
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M22 12a10 10 0 1 0-11.5 9.87v-7h-2v-2.87h2v-2.2c0-2 1.2-3.1 3-3.1.86 0 1.6.06 1.8.09v2.1h-1.2c-1 0-1.3.6-1.3 1.3v1.8h2.5l-.4 2.87h-2.1v7A10 10 0 0 0 22 12z"/>
+                    </svg>
+                </a>
+
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/john.techtechnologieskenya2023" class="social-link-insta" aria-label="Instagram">
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M7 2C4.8 2 3 3.8 3 6v12c0 2.2 1.8 4 4 4h10c2.2 0 4-1.8 4-4V6c0-2.2-1.8-4-4-4H7zm10 2c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H7c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2h10zm-5 3c-2.8 0-5 2.2-5 5s2.2 5 5 5a5 5 0 0 0 0-10zm0 2c1.7 0 3 1.3 3 3s-1.3 3-3 3a3 3 0 0 1 0-6zm4.5-.1c-.6 0-1.1.5-1.1 1.1s.5 1.1 1.1 1.1 1.1-.5 1.1-1.1-.5-1.1-1.1-1.1z"/>
+                    </svg>
+                </a>
+
+                <!-- WhatsApp -->
+                <a href="https://wa.me/254790825018" class="social-link-whtpp" aria-label="WhatsApp">
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 32 32">
+                        <path d="M16 3C9.4 3 4 8.4 4 15c0 2.7.9 5.3 2.6 7.4L4 29l7.9-2.6C14.1 27.1 15 27 16 27c6.6 0 12-5.4 12-12S22.6 3 16 3zm0 21c-.8 0-1.6-.1-2.4-.3l-.3-.1-4.7 1.6 1.6-4.5-.2-.3c-1.4-1.7-2.2-3.8-2.2-6C8 9.5 11.5 6 16 6s8 3.5 8 8-3.5 10-8 10zm4.5-7.6c-.2-.1-1.2-.6-1.3-.6s-.3-.1-.5.1-.6.6-.7.7-.3.1-.5 0c-.2-.1-.8-.3-1.4-.9-.5-.5-.9-1.2-1-1.4s0-.3.1-.4.2-.2.3-.3c.1-.1.2-.2.3-.4.1-.2 0-.3 0-.4s-.5-1.3-.7-1.7c-.2-.5-.4-.4-.6-.4h-.4c-.1 0-.4.1-.6.3-.2.2-.8.8-.8 2s.9 2.3 1 2.5c.1.2 1.8 2.7 4.5 3.7.6.3 1 .5 1.4.6.6.2 1.1.2 1.5.1.4-.1 1.2-.5 1.3-1 .1-.4.1-1 .1-1s-.1-.1-.3-.2z"/>
+                    </svg>
+                </a>
+
+                <!-- TikTok -->
+                <a href="https://www.tiktok.com/@jtechtechologies?_t=8s5QdodQxjJ&_r=1" class="social-link-tiktok" aria-label="TikTok">
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 256 256">
+                        <path d="M168 24a8 8 0 0 0-8-8h-32a8 8 0 0 0-8 8v105.4a24 24 0 1 1-16-22.6 8 8 0 0 0 8-8V88a8 8 0 0 0-10.6-7.6A40 40 0 1 0 152 160V88a87.5 87.5 0 0 0 40 10.2 8 8 0 0 0 8-8V56a8 8 0 0 0-8-8h-24V32a8 8 0 0 0-8-8Z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2025 Johntech Solution. All rights reserved.</p>
+    </div>
+</footer>
+</div>
+<script>
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    menuToggle.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+</script>
+
+</body>

@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Johntech Solutions - Water ATM FAQs</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f0f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 5px;
+            text-align: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .page-title {
+            padding: 20px 15px;
+            background-color: #1a7db5;
+            color: white;
+            text-align: center;
+        }
+        
+        .container {
+            max-width: 100%;
+            padding: 15px;
+        }
+        
+        .faq-intro {
+            margin-bottom: 25px;
+            text-align: center;
+            padding: 0 10px;
+        }
+        
+        .accordion {
+            margin-bottom: 60px;
+        }
+        
+        .accordion-item {
+            margin-bottom: 12px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .accordion-header {
+            background-color: white;
+            padding: 15px;
+            cursor: pointer;
+            position: relative;
+            font-weight: 600;
+            border-left: 4px solid #1a7db5;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .accordion-header:after {
+            content: '+';
+            font-size: 20px;
+            color: #1a7db5;
+        }
+        
+        .accordion-header.active:after {
+            content: '−';
+        }
+        
+        .accordion-content {
+            background-color: white;
+            padding: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .accordion-content-inner {
+            padding: 15px;
+            border-top: 1px solid #eee;
+        }
+        
+        .contact-section {
+            background-color: #1a7db5;
+            color: white;
+            text-align: center;
+            padding: 20px 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .contact-section h3 {
+            margin-bottom: 15px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #e67e22;
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #d35400;
+        }
+        
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Johntech Solutions</div>
+        <div>Pure Water Solutions for Every Business</div>
+    </header>
+    
+    <div class="page-title">
+        <h1>Frequently Asked Questions</h1>
+    </div>
+    
+    <div class="container">
+        <div class="faq-intro">
+            <p>Find answers to common questions about our Water ATM and Purification Systems. We're here to help entrepreneurs and businesses succeed with reliable water vending solutions.</p>
+        </div>
+        
+        <div class="accordion">
+            <div class="accordion-item">
+                <div class="accordion-header">How do Water ATM machines work?</div>
+                <div class="accordion-content">
+                    <div class="accordion-content-inner">
+                        <p>Our Water ATM machines function as automated water dispensing systems. Here's how they operate:</p>
+                        <ul style="padding-left: 20px; margin-top: 10px;">
+                            <li>Water is sourced from your connection and passes through our multi-stage purification system</li>
+                            <li>Customers make payment through M-Pesa, smart cards, or coins depending on your chosen model</li>
+                            <li>The system verifies payment and dispenses the exact amount of water purchased</li>
+                            <li>Our machines include real-time monitoring systems allowing you to track sales, water levels, and machine status remotely</li>
+                            <li>Each machine includes UV sterilization as the final purification step before dispensing to ensure water safety</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="accordion-item">
+                <div class="accordion-header">What are the power and water requirements?</div>
+                <div class="accordion-content">
+                    <div class="accordion-content-inner">
+                        <p><strong>Power requirements:</strong></p>
+                        <ul style="padding-left: 20px; margin-top: 10px;">
+                            <li>Standard models: 220-240V AC connection</li>
+                            <li>Solar-powered options available for areas with unreliable electricity</li>
+                            <li>Power consumption: 0.5-1.5 kWh per day depending on usage</li>
+                            <li>Built-in power stabilization to protect against power fluctuations</li>
+                            <li>Optional backup battery system ensures operation during outages</li>
+                        </ul>
+                        
+                        <p style="margin-top: 15px;"><strong>Water requirements:</strong></p>
+                        <ul style="padding-left: 20px; margin-top: 10px;">
+                            <li>Connection to municipal water supply or borehole/well</li>
+                            <li>Minimum water pressure: 1 bar</li>
+                            <li>Storage tank capacity: 500-2000 liters (customizable)</li>
+                            <li>Daily capacity: Up to 5000 liters depending on model</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="accordion-item">
+                <div class="accordion-header">What payment options are available for customers?</div>
+                <div class="accordion-content">
+                    <div class="accordion-content-inner">
+                        <p>Our Water ATMs support multiple payment solutions to maximize convenience:</p>
+                        <ul style="padding-left: 20px; margin-top: 10px;">
+                            <li><strong>Mobile Money Integration:</strong> Direct M-Pesa, Airtel Money and other mobile payment integration</li>
+                            <li><strong>RFID/Smart Cards:</strong> Reloadable cards that customers can top up for regular use</li>
+                            <li><strong>Coin Acceptance:</strong> Traditional coin operation available on select models</li>
+                            <li><strong>QR Code Payments:</strong> Scan-and-pay functionality via smartphone</li>
+                            <li><strong>Subscription Model:</strong> Monthly subscription options for regular customers</li>
+                        </ul>
+                        <p style="margin-top: 15px;">All payment transactions are securely recorded in our cloud-based management system, allowing you to track sales in real-time and generate comprehensive reports.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="accordion-item">
+                <div class="accordion-header">What is the profit potential and expected ROI?</div>
+                <div class="accordion-content">
+                    <div class="accordion-content-inner">
+                        <p>Water ATMs offer excellent return on investment for entrepreneurs:</p>
+                        <ul style="padding-left: 20px; margin-top: 10px;">
+                            <li>Typical ROI period: 10-18 months depending on location and foot traffic</li>
+                            <li>Average daily sales: 1000-3000 liters in high-traffic areas</li>
+                            <li>Profit margins: 60-80% after accounting for water, electricity, and maintenance costs</li>
+                            <li>Additional revenue streams through advertising space on the machine</li>
+                            <li>Operational costs are minimal compared to traditional retail businesses</li>
+                        </ul>
+                        <p style="margin-top: 15px;">For example, with a typical selling price of KSh 2-5 per liter and water/operational costs of approximately KSh 0.5-1 per liter, a machine dispensing 1500 liters daily can generate KSh 90,000-150,000 monthly in gross revenue.</p>
+                        <p style="margin-top: 10px;">We provide detailed financial projections tailored to your specific location and market during consultation.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="accordion-item">
+                <div class="accordion-header">What does the installation and maintenance process involve?</div>
+                <div class="accordion-content">
+                    <div class="accordion-content-inner">
+                        <p><strong>Installation:</strong></p>
+                        <ul style="padding-left: 20px; margin-top: 10px;">
+                            <li>Site assessment and preparation by our technical team</li>
+                            <li>Professional installation of machine, purification system, and storage tanks</li>
+                            <li>Water quality testing before commissioning</li>
+                            <li>Setup of payment systems and management software</li>
+                            <li>Comprehensive training for you and your staff</li>
+                        </ul>
+                        
+                        <p style="margin-top: 15px;"><strong>Maintenance:</strong></p>
+                        <ul style="padding-left: 20px; margin-top: 10px;">
+                            <li>Regular filter replacement (schedules vary by component - typically every 3-6 months)</li>
+                            <li>Remote monitoring allows our technicians to identify issues proactively</li>
+                            <li>Scheduled preventative maintenance visits included in service packages</li>
+                            <li>Emergency technical support with 24-48 hour response time</li>
+                            <li>User-replaceable components designed for simple maintenance</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="accordion-item">
+                <div class="accordion-header">What warranty and after-sales support do you provide?</div>
+                <div class="accordion-content">
+                    <div class="accordion-content-inner">
+                        <p><strong>Warranty coverage:</strong></p>
+                        <ul style="padding-left: 20px; margin-top: 10px;">
+                            <li>2-year comprehensive warranty on all machine components</li>
+                            <li>5-year warranty on purification system framework</li>
+                            <li>Extended warranty packages available</li>
+                        </ul>
+                        
+                        <p style="margin-top: 15px;"><strong>After-sales support:</strong></p>
+                        <ul style="padding-left: 20px; margin-top: 10px;">
+                            <li>Dedicated customer success manager assigned to your account</li>
+                            <li>24/7 technical support hotline</li>
+                            <li>Quarterly maintenance packages available</li>
+                            <li>Free software updates for the management system</li>
+                            <li>Operator training refresher courses</li>
+                            <li>Replacement parts stocked locally for quick repairs</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="accordion-item">
+                <div class="accordion-header">What customization options are available?</div>
+                <div class="accordion-content">
+                    <div class="accordion-content-inner">
+                        <p>Our Water ATM machines can be customized to meet your specific requirements:</p>
+                        <ul style="padding-left: 20px; margin-top: 10px;">
+                            <li><strong>Branding:</strong> Custom exterior design with your business colors, logo, and messaging</li>
+                            <li><strong>Capacity:</strong> Storage tank size from 500L to 5000L</li>
+                            <li><strong>Dispensing options:</strong> Single or multiple dispensing points</li>
+                            <li><strong>Additional features:</strong> 
+                                <ul style="padding-left: 20px; margin-top: 5px;">
+                                    <li>LCD advertising screens</li>
+                                    <li>Water quality display panel</li>
+                                    <li>Additional vending options (cups, bottles)</li>
+                                    <li>Enhanced security features</li>
+                                </ul>
+                            </li>
+                            <li><strong>Purification levels:</strong> Standard or enhanced filtration systems based on source water quality</li>
+                            <li><strong>Water temperature:</strong> Ambient, chilled, or hot water options</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="accordion-item">
+                <div class="accordion-header">What safety and hygiene features are included?</div>
+                <div class="accordion-content">
+                    <div class="accordion-content-inner">
+                        <p>Our Water ATMs prioritize water safety and hygiene with these features:</p>
+                        <ul style="padding-left: 20px; margin-top: 10px;">
+                            <li><strong>Multi-stage purification:</strong> 
+                                <ul style="padding-left: 20px; margin-top: 5px;">
+                                    <li>Sediment filtration (5-10 micron)</li>
+                                    <li>Activated carbon filtration</li>
+                                    <li>Ultrafiltration membrane (0.01 micron)</li>
+                                    <li>Reverse osmosis (where required)</li>
+                                    <li>UV sterilization as final safety step</li>
+                                </ul>
+                            </li>
+                            <li><strong>Automatic sanitization:</strong> Scheduled UV sanitization of dispensing nozzles</li>
+                            <li><strong>Quality monitoring:</strong> Real-time water quality sensors with alerts</li>
+                            <li><strong>Anti-contamination design:</strong> Protected dispensing area to prevent external contamination</li>
+                            <li><strong>Automatic shutdown:</strong> If water quality parameters fall below set thresholds</li>
+                            <li><strong>Regular testing:</strong> Maintenance packages include regular water quality testing</li>
+                        </ul>
+                        <p style="margin-top: 15px;">All our systems comply with Kenya Bureau of Standards (KEBS) requirements for drinking water quality.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="accordion-item">
+                <div class="accordion-header">What licenses or permits are required?</div>
+                <div class="accordion-content">
+                    <div class="accordion-content-inner">
+                        <p>Operating a Water ATM business in Kenya typically requires:</p>
+                        <ul style="padding-left: 20px; margin-top: 10px;">
+                            <li><strong>Water vending permit</strong> from the local county government</li>
+                            <li><strong>Water quality certification</strong> from KEBS</li>
+                            <li><strong>Business permit</strong> from your county government</li>
+                            <li><strong>Public health certificate</strong> for the premises</li>
+                            <li>If bottling water: <strong>KEBS standardization mark</strong></li>
+                        </ul>
+                        <p style="margin-top: 15px;">Our consultants provide guidance through the licensing process and can connect you with experts who specialize in obtaining these permits. We also provide all necessary technical documentation required for the application process.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="accordion-item">
+                <div class="accordion-header">What is the delivery and setup timeline?</div>
+                <div class="accordion-content">
+                    <div class="accordion-content-inner">
+                        <p>Our typical project timeline:</p>
+                        <ul style="padding-left: 20px; margin-top: 10px;">
+                            <li><strong>Consultation and site assessment:</strong> 1 day</li>
+                            <li><strong>Order processing and manufacturing:</strong> 1-2 weeks</li>
+                            <li><strong>Installation and setup:</strong> 1 day</li>
+                            <li><strong>Testing and commissioning:</strong> 1-2 days</li>
+                            <li><strong>Training:</strong> same day</li>
+                        </ul>
+                        <p style="margin-top: 15px;">Total timeline from order to operational machine: approximately 1-2 weeks. Express delivery options are available for an additional fee for urgent projects.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="contact-section">
+            <h3>Still have questions?</h3>
+            <p>Our water solutions experts are ready to help you start your successful Water ATM business.</p>
+            <a href="https://wa.me/254790825018" class="btn">Request Consultation</a>
+        </div>
+    </div>
+    
+    <footer>
+        <p>© 2025 Johntech Solutions. All rights reserved.</p>
+        <p>Providing smart solution for Kenyan businesses.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const accordionHeaders = document.querySelectorAll('.accordion-header');
+            
+            accordionHeaders.forEach(header => {
+                header.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    
+                    const content = this.nextElementSibling;
+                    
+                    if (this.classList.contains('active')) {
+                        content.style.maxHeight = content.scrollHeight + 'px';
+                    } else {
+                        content.style.maxHeight = '0';
+                    }
+                    
+                    // Close other open items
+                    accordionHeaders.forEach(otherHeader => {
+                        if (otherHeader !== this && otherHeader.classList.contains('active')) {
+                            otherHeader.classList.remove('active');
+                            otherHeader.nextElementSibling.style.maxHeight = '0';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -10,6 +10,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/countup.js/2.0.8/countUp.min.js"></script>
     <script src="script.js"></script>
+
     <style>/* Base Variables */
 :root {
     --primary: #0369a1;
@@ -613,55 +614,93 @@ header {
     margin-bottom: 20px;
 }
 
-/* Footer */
-footer {
-    background-color: var(--dark);
-    color: var(--light);
-    padding: 50px 0 20px;
+        .footer {
+    background-color: #111;
+    color: #eee;
+    padding: 40px 20px 20px;
+    font-family: 'Segoe UI', sans-serif;
 }
 
-.footer-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 30px;
-    margin-bottom: 30px;
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
 }
 
-.footer-title {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-    position: relative;
-    padding-bottom: 10px;
+.footer-section, .footer-about, .footer-links, .footer-social {
+    flex: 1 1 200px;
+    min-width: 200px;
 }
 
-.footer-title::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 30px;
-    height: 2px;
-    background-color: var(--primary-light);
-}
-
-.footer-links {
-    list-style: none;
-}
-
-.footer-links li {
+.footer h3, .footer h4 {
+    color: #fff;
     margin-bottom: 10px;
 }
 
+.footer p, .footer ul {
+    margin: 0;
+    font-size: 14px;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
 .footer-links a {
-    color: var(--light-gray);
+    color: #ccc;
     text-decoration: none;
-    transition: var(--transition);
+    display: block;
+    margin-bottom: 6px;
 }
 
 .footer-links a:hover {
-    color: var(--primary-light);
-    padding-left: 5px;
+    color: #1e90ff;
 }
+
+.social-links {
+    display: flex;
+    gap: 10px;
+}
+
+.social-link {
+    color: #ccc;
+    transition: color 0.3s ease;
+}
+
+.social-link:hover {
+    color: #1e90ff;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 13px;
+    color: #aaa;
+}
+/* Social icon container */
+.social-link svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* Specific brand colors */
+.social-link-fb svg { color: #1877f2; }    /* Facebook blue */
+.social-link-insta svg { color: #e4405f; }   /* Instagram pink-red */
+.social-link-whtpp svg { color: #25D366; }    /* WhatsApp green */
+.social-link-tiktok svg { color: #ffff; }      /* TikTok black */
+
+
+/* Responsive layout */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+
 
 .social-links {
     display: flex;
@@ -875,7 +914,7 @@ footer {
                 <!-- Slide 3 -->
                 <div class="slide min-w-full relative flex flex-col md:flex-row bg-white">
                     <div class="slide-image-container w-full md:w-1/2 h-[180px] md:h-full overflow-hidden flex items-center justify-center">
-                        <img src="images/oil-atm.jpeg" alt="Residential Package" class="max-w-full max-h-full object-contain p-2">
+                        <img src="images/Oil-main.jpeg" alt="Residential Package" class="max-w-full max-h-full object-contain p-2">
                     </div>
                     <div class="slide-content w-full md:w-1/2 p-4 flex flex-col justify-center">
                         <div class="slide-text-container p-3 rounded-lg">
@@ -1095,6 +1134,59 @@ footer {
                 </div>
             </div>
         </div>
+        <!-- Footer -->
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-about">
+            <h3>Johntech Solution</h3>
+            <p>Providing smart vending and water purification systems across Kenya.</p>
+        </div>
+        <div class="footer-links">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">products</a></li>
+                <li><a href="faq.html">Faq</a></li>
+                <li><a href="testimonials.html">Testimonials</a></li>
+            </ul>
+        </div>
+        <div class="footer-social">
+            <h4>Follow Us</h4>
+            <div class="social-links">
+                <!-- Facebook -->
+                <a href="https://www.facebook.com/jontechtechnologieskenya" class="social-link-fb" aria-label="Facebook">
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M22 12a10 10 0 1 0-11.5 9.87v-7h-2v-2.87h2v-2.2c0-2 1.2-3.1 3-3.1.86 0 1.6.06 1.8.09v2.1h-1.2c-1 0-1.3.6-1.3 1.3v1.8h2.5l-.4 2.87h-2.1v7A10 10 0 0 0 22 12z"/>
+                    </svg>
+                </a>
+
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/john.techtechnologieskenya2023" class="social-link-insta" aria-label="Instagram">
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M7 2C4.8 2 3 3.8 3 6v12c0 2.2 1.8 4 4 4h10c2.2 0 4-1.8 4-4V6c0-2.2-1.8-4-4-4H7zm10 2c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H7c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2h10zm-5 3c-2.8 0-5 2.2-5 5s2.2 5 5 5a5 5 0 0 0 0-10zm0 2c1.7 0 3 1.3 3 3s-1.3 3-3 3a3 3 0 0 1 0-6zm4.5-.1c-.6 0-1.1.5-1.1 1.1s.5 1.1 1.1 1.1 1.1-.5 1.1-1.1-.5-1.1-1.1-1.1z"/>
+                    </svg>
+                </a>
+
+                <!-- WhatsApp -->
+                <a href="https://wa.me/254790825018" class="social-link-whtpp" aria-label="WhatsApp">
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 32 32">
+                        <path d="M16 3C9.4 3 4 8.4 4 15c0 2.7.9 5.3 2.6 7.4L4 29l7.9-2.6C14.1 27.1 15 27 16 27c6.6 0 12-5.4 12-12S22.6 3 16 3zm0 21c-.8 0-1.6-.1-2.4-.3l-.3-.1-4.7 1.6 1.6-4.5-.2-.3c-1.4-1.7-2.2-3.8-2.2-6C8 9.5 11.5 6 16 6s8 3.5 8 8-3.5 10-8 10zm4.5-7.6c-.2-.1-1.2-.6-1.3-.6s-.3-.1-.5.1-.6.6-.7.7-.3.1-.5 0c-.2-.1-.8-.3-1.4-.9-.5-.5-.9-1.2-1-1.4s0-.3.1-.4.2-.2.3-.3c.1-.1.2-.2.3-.4.1-.2 0-.3 0-.4s-.5-1.3-.7-1.7c-.2-.5-.4-.4-.6-.4h-.4c-.1 0-.4.1-.6.3-.2.2-.8.8-.8 2s.9 2.3 1 2.5c.1.2 1.8 2.7 4.5 3.7.6.3 1 .5 1.4.6.6.2 1.1.2 1.5.1.4-.1 1.2-.5 1.3-1 .1-.4.1-1 .1-1s-.1-.1-.3-.2z"/>
+                    </svg>
+                </a>
+
+                <!-- TikTok -->
+                <a href="https://www.tiktok.com/@jtechtechologies?_t=8s5QdodQxjJ&_r=1" class="social-link-tiktok" aria-label="TikTok">
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 256 256">
+                        <path d="M168 24a8 8 0 0 0-8-8h-32a8 8 0 0 0-8 8v105.4a24 24 0 1 1-16-22.6 8 8 0 0 0 8-8V88a8 8 0 0 0-10.6-7.6A40 40 0 1 0 152 160V88a87.5 87.5 0 0 0 40 10.2 8 8 0 0 0 8-8V56a8 8 0 0 0-8-8h-24V32a8 8 0 0 0-8-8Z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2025 Johntech Solution. All rights reserved.</p>
+    </div>
+</footer>
     <script>
 document.addEventListener('DOMContentLoaded', function() {
     // Get slider elements
